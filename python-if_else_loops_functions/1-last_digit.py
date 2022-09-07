@@ -9,5 +9,5 @@ if ld > 5:
     print("Last digit of {} is {} and is greater than 5".format(n, ld))
 if ld == 0:
     print("Last digit of {} is {} and is 0".format(n, ld))
-if ld < 6 and n % 10 != 0:
+if ld < 6 and ld != 0:
     print("Last digit of {} is {} and is less than 6 and not 0".format(n, ld))
