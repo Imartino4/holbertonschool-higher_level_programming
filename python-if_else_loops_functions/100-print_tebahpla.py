@@ -6,4 +6,4 @@ for i in range(90, 64, -1):
         c = chr(i + 32)
     else:
         c = chr(i)
-    print(f"{c}", end="")
+    print("{}".format(c), end="")
