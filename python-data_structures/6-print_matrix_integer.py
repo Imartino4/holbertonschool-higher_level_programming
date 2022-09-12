@@ -5,8 +5,8 @@ def print_matrix_integer(matrix=[[]]):
     for i in range(m):
         for j in range(n):
             if (j < n - 1):
-                print("{}".format(matrix[i][j]), end=" ")
+                print("{:d}".format(matrix[i][j]), end=" ")
             else:
-                print("{}".format(matrix[i][j]), end="")
+                print("{:d}".format(matrix[i][j]), end="")
 
         print("")
