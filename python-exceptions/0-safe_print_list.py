@@ -7,6 +7,6 @@ def safe_print_list(my_list=[], x=0):
                 print(f"{i}", end="")
                 count = count + 1
         print(f"")
-    except TypeError as message:
-        print(message)
+    except Exception:
+        print("Que pasa?")
     return count
