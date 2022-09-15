@@ -8,5 +8,5 @@ def safe_print_list(my_list=[], x=0):
                 count = count + 1
         print(f"")
     except TypeError as message:
-        print (message)
+        print(message)
     return count
