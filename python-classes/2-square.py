@@ -5,7 +5,7 @@
 class Square:
     """Defining the Square class"""
     def __init__(self, size=0):
-        """ 
+        """
         Args:
         param1 (size): Square's size, must be an int >= 0
 
