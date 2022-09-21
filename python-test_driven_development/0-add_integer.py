@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 
+"""
 Module to add integers
 add_integer receives two number as parameters
 """
