@@ -42,7 +42,7 @@ class Square:
     def position(self, value):
         """Property setter, set position"""
         flag = 0
-        if isinstance(value, tuple) == 0 or len(value) != 2:
+        if isinstance(value, tuple) == False or len(value) != 2:
             flag = 1
         if type(value[0]) != int or type(value[1]) != int:
             flag = 1
