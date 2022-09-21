@@ -23,6 +23,7 @@ class Square:
         """Property, retrieve size"""
         return self.__size
 
+    @property
     def position(self):
         """Property, retrieve position"""
         return self.__position
@@ -37,14 +38,15 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
+    @position.setter
     def position(self, value):
         """Property setter, set position"""
         flag = 0
-        if type(value) != tuple or len(value) != 2:
+        if isinstance(value, tuple) == 0 or len(value) != 2:
             flag = 1
         if type(value[0]) != int or type(value[1]) != int:
             flag = 1
-        if value[0] <= 0 or value[1] <= 0:
+        if value[0] < 0 or value[1] < 0:
             flag = 1
         if flag == 1:
             raise TypeError("position must be a tuple of 2 positive integers")
