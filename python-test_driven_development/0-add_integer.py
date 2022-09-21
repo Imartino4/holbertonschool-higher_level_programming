@@ -6,14 +6,13 @@ add_integer receives two number as parameters
 
 
 def add_integer(a, b=98):
-    """ Function to add a + b
+    """ Function to add a + b.
     Args:
-        a: must be int or float
-        b: must be int ot float
+        a: must be int or float.
+        b: must be int ot float.
 
     Return:
-        add_integer(5, 7)
-        12
+        add_integer(5, 7).
     """
     if not isinstance(a, int) and not isinstance(a, float):
         raise TypeError(a must be an integer)
