@@ -1,0 +1,16 @@
+::
+    >>> from doctest_in_help import add_integer
+    >>> add_integer(1, 2)
+    3
+::
+    >>> add_integer(2)
+    100
+::
+    >>> add_integer("Hola", 2)
+    a must be an integer
+
+    >>> add_integer(2, 'a')
+    b must be an integer
+::
+    >>> add_integer(2.3, 3)
+    5
