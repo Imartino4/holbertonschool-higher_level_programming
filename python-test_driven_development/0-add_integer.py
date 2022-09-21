@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" Function to add integers"""
+""" Module to add integers"""
 
 
 def add_integer(a, b=98):
     """
-    add a + b
-    arguments a,b must be int or float
+    Functino to add a + b
+    arg(a, b) must be int or float
     """
     if not isinstance(a, int) and not isinstance(a, float):
         raise TypeError(a must be an integer)
