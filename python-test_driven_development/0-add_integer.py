@@ -11,7 +11,7 @@ def add_integer(a, b=98):
         a: must be int or float
         b: must be int ot float
 
-    Examples:
+    Return:
         add_integer(5, 7)
         12
     """
