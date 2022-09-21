@@ -25,7 +25,7 @@ class Square:
 
     def position(self):
         """Property, retrieve position"""
-        return self.position
+        return self.__position
 
     @size.setter
     def size(self, value):
@@ -48,7 +48,7 @@ class Square:
             flag = 1
         if flag == 1:
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.position = value
+        self.__position = value
 
     def my_print(self):
         """ Public instance method that print a square with "#" """
