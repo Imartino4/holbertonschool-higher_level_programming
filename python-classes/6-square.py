@@ -39,13 +39,16 @@ class Square:
 
     def position(self, value):
         """Property setter, set position"""
+        flag = 0
         if type(value) != tuple or len(value) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
+            flag = 1
         if type(value[0]) != int or type(value[1]) != int:
-            raise TypeError("position must be a tuple of 2 positive integers")
+            flag = 1
         if value[0] <= 0 or value[1] <= 0:
+            flag = 1
+        if flag == 1:
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.position= value
+        self.position = value
 
     def my_print(self):
         """ Public instance method that print a square with "#" """
