@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 
+"""
 This module include say_my_name function
 which prints name and last_name given as argument
 """
