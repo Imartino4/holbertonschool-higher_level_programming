@@ -1,0 +1,22 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+#String as argument
+>>> text_indentation("Nombre: Ignacio")
+Nombre:
+<BLANKLINE>
+Ignacio
+
+>>> text_indentation("Mbappe")
+Mbappe
+
+#Other type as argument
+>>> text_indentation(["Name: Ignacio", "Hola"])
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+#Empty argument
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
