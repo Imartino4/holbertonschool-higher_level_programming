@@ -9,7 +9,7 @@ def matrix_divided(matrix, div):
         div: int or float, except 0
     Return:
         a new matrix
-    """ 
+    """
     Err1 = "matrix must be a matrix (list of lists) of integers/floats"
     if type(div) != int and type(div) != float:
         raise TypeError("div must be a number")
