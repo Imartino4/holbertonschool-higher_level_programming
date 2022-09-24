@@ -3,3 +3,5 @@
 
 
 class Rectangle:
+    """Only definition"""
+    pass
