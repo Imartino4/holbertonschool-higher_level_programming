@@ -9,16 +9,9 @@ class TestMaxInteger(unittest.TestCase):
     """Tests"""
 
     def test_max_integer(self):
-        self.assertEqual(max_integer([10, 5, 19, 8]), 19)
-
-    def test_max_float(self):
-        self.assertEqual(max_integer([-1.5, 4.6, 3.3, 8.7]), 8.7)
-
-    def test_empty_list(self):
+        self.assertEqual(max_integer([12, 0, -1, 18]), 18)
         self.assertEqual(max_integer([]), None)
-
-    def test_same_numbers(self):
-        self.assertEqual(max_integer([1, 1, 1]), 1)
-
-    def test_one_number(self)
-        self.assertEqual(max_integer([0]), 0)
+        self.assertEqual(max_integer(), None)
+        self.assertEqual(max_integer([1.0, 2.1, 3.9, 0.7]), 3.9)
+        self.assertEqual(max_integer([9]), 9)
+        self.assertEqual(max_integer([4, 3, 2, 1]), 4)
