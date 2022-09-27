@@ -11,16 +11,63 @@ Traceback (most recent call last):
 ...
 TypeError: name must be an integer
 
-# value <= 0
+# value != int
+>>> figure1 = BaseGeometry()
+>>> figure1.integer_validator("name", "7")
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+# value != int
+>>> figure1 = BaseGeometry()
+>>> figure1.integer_validator("name", False)
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+# value != int
+>>> figure1 = BaseGeometry()
+>>> figure1.integer_validator("name", {3, 4})
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+# value != int
+>>> figure1 = BaseGeometry()
+>>> figure1.integer_validator("name", None)
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+# value negative
 >>> figure2 = BaseGeometry()
 >>> figure2.integer_validator("name", -4)
 Traceback (most recent call last):
 ...
 ValueError: name must be greater than 0
 
-# empty argument
+# value 0
+>>> figure2 = BaseGeometry()
+>>> figure2.integer_validator("name", 0)
+Traceback (most recent call last):
+...
+ValueError: name must be greater than 0
+
+# one argument
 >>> figure3 = BaseGeometry()
 >>> figure3.integer_validator("name")
 Traceback (most recent call last):
 ...
 TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+# None arguments
+>>> figure3.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+#check area
+>>> figure3.are()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
