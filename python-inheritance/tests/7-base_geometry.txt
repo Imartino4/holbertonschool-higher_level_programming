@@ -67,7 +67,7 @@ Traceback (most recent call last):
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 #check area
->>> figure3.are()
+>>> figure3.area()
 Traceback (most recent call last):
 ...
 Exception: area() is not implemented
