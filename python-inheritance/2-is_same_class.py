@@ -3,6 +3,7 @@
     which evaluate if an instance belongs to a specified class
 """
 
+
 def is_same_class(obj, a_class):
     """Receives an object and a class, and returns
     True if the object belongs to the class, and False if not """
