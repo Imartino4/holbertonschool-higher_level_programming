@@ -1,0 +1,26 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+# correct input
+>>> figure0 = BaseGeometry()
+>>> figure0.integer_validator("integer", 7)
+
+# value != int
+>>> figure1 = BaseGeometry()
+>>> figure1.integer_validator("name", [7])
+Traceback (most recent call last):
+...
+TypeError: <name> must be an integer
+
+# value <= 0
+>>> figure2 = BaseGeometry()
+>>> figure2.integer_validator("name", -4)
+Traceback (most recent call last):
+...
+ValueError: <name> must be greater than 0
+
+# empty argument
+>>> figure3 = BaseGeometry()
+>>> figure3.integer_validator("name")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
