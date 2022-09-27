@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ This module contain is_kind_of_class function
-    which evaluate if the object is an instance of a class or an instance 
+    which evaluate if the object is an instance of a class or an instance
     of a class that inherited from
 """
 
