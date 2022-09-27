@@ -42,3 +42,9 @@ my_list = MyList()
 >>> emp_list = MyList()
 >>> emp_list.print_sorted()
 []
+
+# not int as arguments
+>>> MyList.print_sorted(["Uruguay", 1930, 1950, 2022])
+Traceback (most recent call last):
+...
+TypeError: all the values of the list must be integers
