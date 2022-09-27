@@ -39,6 +39,13 @@ Traceback (most recent call last):
 ...
 TypeError: name must be an integer
 
+# value != int
+>>> figure1 = BaseGeometry()
+>>> figure1.integer_validator("name", (4,))
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
 # value negative
 >>> figure2 = BaseGeometry()
 >>> figure2.integer_validator("name", -4)
