@@ -10,4 +10,4 @@ def load_from_json_file(filename):
     """Receives a JSON file and returns the corresponding object"""
     with open(filename) as f:
         line = f.read()
-         return json.loads(line)
+        return json.loads(line)
