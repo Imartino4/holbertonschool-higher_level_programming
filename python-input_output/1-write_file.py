@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ This module contain write_file function,
 which write a string to a text file"""
 
