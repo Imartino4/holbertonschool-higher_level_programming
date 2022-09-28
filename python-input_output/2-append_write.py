@@ -3,7 +3,7 @@
     which append a string to the end"""
 
 
-def append_write(filename="", text="")
+def append_write(filename="", text=""):
     """Receives a text and the filename, and append the text at
     the end of the file"""
     with open(filename, 'a') as f:
