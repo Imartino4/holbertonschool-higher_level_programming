@@ -7,6 +7,7 @@
 def read_file(filename=""):
     """ receives the filename as a string and print the text to
         stdout"""
+
     with open(filename) as f:
         print(f.read())
     f.closed
