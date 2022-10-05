@@ -48,13 +48,3 @@ class Base():
         else:
             return json.loads(json_string)
 
-    @classmethod 
-    def create(cls, **dictionary)
-        if type(cls) is Rectangle:
-            dummy_instance = 
-
-    @classmethod
-    def load_from_file(cls):
-        """This meyhod returns a list of instances"""
-
-
