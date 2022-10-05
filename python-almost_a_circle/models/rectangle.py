@@ -61,6 +61,7 @@ class Rectangle(Base):
     def y(self):
         """y getter"""
         return self.__y
+
     @y.setter
     def y(self, value):
         """y setter"""
@@ -80,12 +81,13 @@ class Rectangle(Base):
         for i in range(self.__height):
             print(self.__x * ' ', end="")
             for i in range(self.__width):
-                print ('#', end="")
+                print('#', end="")
             print()
-    
+
     def __str__(self):
         """" __str__ customized """
-        return('[Rectangle] ' + '(' + str(self.id) + ') ' + str(self.x) + '/' + str(self.y) + ' - ' + str(self.width) + '/' + str(self.height))
+        return('[Rectangle] ' + '(' + str(self.id) + ') ' + str(self.x) + '/' + str(self.y) +
+                ' - ' + str(self.width) + '/' + str(self.height))
 
     def update(self, *args, **kwargs):
         """update an instance"""
@@ -118,5 +120,6 @@ class Rectangle(Base):
     def to_dictionary(self):
         """ this method returns the dictionary representation
             of a Rectangle's instance"""
-        dict_ = {'x': self.x, 'y':self.y, 'height': self.height, 'width': self.width, 'id': self.id}
+        dict_ = {'x': self.x, 'y': self.y, 'height': self.height,
+                'width': self.width, 'id': self.id}
         return dict_
