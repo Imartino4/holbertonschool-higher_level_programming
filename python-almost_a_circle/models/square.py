@@ -7,13 +7,16 @@ class Square(Rectangle):
     """ Implementation of square class """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """Constructor of Square"""
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
+        """Str customization"""
         return(f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}")
 
     @property
     def size(self):
+        """size getter"""
         return self.width
 
     @size.setter
@@ -49,4 +52,5 @@ class Square(Rectangle):
                     setattr(self, k, v)
 
     def to_dictionary(self):
+        """ To dictionary"""
         return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
