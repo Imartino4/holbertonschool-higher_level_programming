@@ -2,6 +2,7 @@
 """ Base class """
 
 import json
+from os.path import exists
 
 
 class Base():
@@ -42,9 +43,32 @@ class Base():
     @staticmethod
     def from_json_string(json_string):
         """ This method returns the list of the JSON string
-        representation json_strin"""
+        representation json_string"""
 
         if json_string is None:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+        if cls.__name__ == "Rectangle":
+            dummy_inst = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy_inst = cls(1)
+        dummy_inst.update(**dictionary)
+        return dummy_inst
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of cls instances
+            import os.path to exists function"""
+        list_instances = []
+        file_name = f"{cls.__name__}.json"
+        if exists(file_name):
+            with open(file_name, 'r') as f:
+                instances = cls.from_json_string(f.read())
+                for i in instances:
+                    list_instances.append(cls.create(**i))
+        return list_instances
