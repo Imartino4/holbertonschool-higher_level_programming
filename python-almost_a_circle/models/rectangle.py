@@ -86,7 +86,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """" __str__ customized """
-        return('[Rectangle] ' + '(' + str(self.id) + ') ' + str(self.x) +\
+        return('[Rectangle] ' + '(' + str(self.id) + ') ' + str(self.x) +
         '/' + str(self.y) +' - ' + str(self.width) + '/' + str(self.height))
 
     def update(self, *args, **kwargs):
@@ -120,6 +120,6 @@ class Rectangle(Base):
     def to_dictionary(self):
         """ this method returns the dictionary representation
             of a Rectangle's instance"""
-        dict_ = {'x': self.x, 'y': self.y, 'height': self.height, \
+        dict_ = {'x': self.x, 'y': self.y, 'height': self.height, 
         'width': self.width, 'id': self.id}
         return dict_
