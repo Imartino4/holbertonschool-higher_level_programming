@@ -13,13 +13,13 @@ class Base():
         if id:
             self.id = id
         else:
-            Base.__nb_objects +=1
+            Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """ This method recieves a list of dictionaries and returns the JSON string representation
-        of that list """
+        """ This method recieves a list of dictionaries and returns the JSON
+        string representation of that list """
 
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return []
@@ -47,4 +47,3 @@ class Base():
             return []
         else:
             return json.loads(json_string)
-
