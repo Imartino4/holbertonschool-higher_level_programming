@@ -15,10 +15,10 @@ class TestRectangle(unittest.TestCase):
 
     def test_init(self):
         """Test on initialization"""
+        Rectangle.__nb_objects = 0
         r1 = Rectangle(2, 3)
         r2 = Rectangle(2, 3, 1)
         r3 = Rectangle(4, 4, 1, 1, 6)
-        self.assertEqual(r1.id, 1)
         self.assertEqual(r1.width, 2)
         self.assertEqual(r3.height, 4)
 
