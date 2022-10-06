@@ -93,21 +93,21 @@ class Rectangle(Base):
         """update an instance"""
         if args:
             if len(args) == 1:
-                super().__init__(args[0])
+                self.id = (args[0])
             if len(args) == 2:
-                super().__init__(args[0])
+                self.id = (args[0])
                 self.__width = args[1]
             if len(args) == 3:
-                super().__init__(args[0])
+                self.id = (args[0])
                 self.__width = args[1]
                 self.__height = args[2]
             if len(args) == 4:
-                super().__init__(args[0])
+                self.id = (args[0])
                 self.__width = args[1]
                 self.__heiht = args[2]
                 self.__x = args[3]
             if len(args) == 5:
-                super().__init__(args[0])
+                self.id = (args[0])
                 self.__width = args[1]
                 self.__height = args[2]
                 self.__x = args[3]
