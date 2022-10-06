@@ -15,7 +15,6 @@ class TestRectangle(unittest.TestCase):
 
     def test_init(self):
         """Test on initialization"""
-        Rectangle.__nb_objects = 0
         r1 = Rectangle(2, 3)
         r2 = Rectangle(2, 3, 1)
         r3 = Rectangle(4, 4, 1, 1, 6)
@@ -57,6 +56,10 @@ class TestRectangle(unittest.TestCase):
             r1 = Rectangle(1, 3, -1)
         with self.assertRaises(ValueError):
             r1 = Rectangle(1, 2, 4, -5)
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(1, 0)
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(0, 0)
 
     def test_area(self):
         """Test on area method"""
@@ -102,6 +105,33 @@ class TestRectangle(unittest.TestCase):
         # change x with **kwargs
         r1.update(x=9)
         self.assertEqual(r1.x, 9)
+
+    def test_create(self):
+        """Test on create method"""
+        kwargs3 = {'id': 5, 'width': 16, 'height': 8}
+        kwargs4 = {'id': 5, 'width': 16, 'height': 8, 'x': 2}
+        kwargs5 = {'id': 5, 'width': 16, 'height': 8, 'x': 2, 'y': 1}
+        r3 = Rectangle.create(**kwargs3)
+        r4 = Rectangle.create(**kwargs4)
+        r5 = Rectangle.create(**kwargs5)
+        self.assertEqual(r3.height, 8)
+        self.assertEqual(r4.x, 2)
+        self.assertEqual(r5.y, 1)
+
+    def test_save_to_file(self):
+        """Test on save to file method"""
+        r1 = Rectangle(5, 4, 2, 2, 1)
+        r2 = Rectangle(6, 6, 1, 1, 2)
+        r1_d = r1.to_dictionary()
+        r2_d = r2.to_dictionary()
+        list_objects = [r1, r2]
+        list_json = [r1_d, r2_d]
+        Rectangle.save_to_file(list_objects)
+        # Now we check if the file contains the json string representation
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(json.dumps(list_json), file.read())
+
+
         
 
 if __name__ == '__main__':
