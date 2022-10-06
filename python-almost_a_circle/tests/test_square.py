@@ -17,9 +17,10 @@ class TestSquare(unittest.TestCase):
     def test_init(self):
         """Test on initialization"""
         s1 = Square(2)
-        s2 = Square(2, 3,)
+        s2 = Square(2, 3)
         s3 = Square(4, 4, 1)
         self.assertEqual(s1.size, 2)
+        self.assertEqual(s2.size, 2)
         self.assertEqual(s3.y, 1)
 
     def test_init_no_arguments(self):
@@ -48,6 +49,8 @@ class TestSquare(unittest.TestCase):
             s1 = Square(0, 3)
         with self.assertRaises(ValueError):
             s1 = Square(1, 3, -1)
+        with self.assertRaises(ValueError):
+            s1 = Square(1, -2)
 
     def test_area(self):
         """Test on area method"""
@@ -121,7 +124,10 @@ class TestSquare(unittest.TestCase):
         with open("Square.json", "r") as file:
             self.assertEqual(json.dumps(list_json), file.read())
 
-
+    def test_save_to_file_empty(self):
+        Square.save_to_file([])
+        with open("Square.json", "r") as file:
+            self.assertEqual("[]", file.read())
         
 
 if __name__ == '__main__':
