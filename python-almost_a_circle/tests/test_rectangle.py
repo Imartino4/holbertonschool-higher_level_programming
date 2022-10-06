@@ -74,8 +74,31 @@ class TestRectangle(unittest.TestCase):
         with contextlib.redirect_stdout(buf):
             r3.display()
         self.assertEqual(buf.getvalue(), "###\n###\n")
+        buf2 = io.StringIO()
+        with contextlib.redirect_stdout(buf2):
+            r4.display()
+        self.assertEqual(buf2.getvalue(), "\n\n  ###\n  ###\n")
+        buf3 = io.StringIO()
+        with contextlib.redirect_stdout(buf3):
+            r5.display()
+        self.assertEqual(buf3.getvalue(), "  ###\n  ###\n")
 
+    def teste_to_dictionary(self):
+        """Test on to_dictionary method"""
+        r1 = Rectangle(2, 3, 0, 0, 1)
+        r1_dict = r1.to_dictionary()
+        self.assertEqual(r1_dict, {'x': 0, 'y': 0, 'height': 3, 'width': 2, 'id': 1})
 
+    def test_update(self):
+        """Test on update method"""
+        r1 = Rectangle(10, 10, 1, 1, 5)
+        # change width and height with *args)
+        r1.update(5, 4, 3, 1, 1)
+        self.assertEqual(r1.height, 3)
+        # change x with **kwargs
+        r1.update(x=9)
+        self.assertEqual(r1.x, 9)
+        
 
 if __name__ == '__main__':
     unittest.main()
