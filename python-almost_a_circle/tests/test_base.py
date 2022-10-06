@@ -13,6 +13,7 @@ class TestBase(unittest.TestCase):
     def test_init(self):
         """ Test on initialization of Base, assuming that argument given
         are int"""
+        Base._Base__nb_objects = 0
         b1 = Base()
         b2 = Base(None)
         b3 = Base(6)
