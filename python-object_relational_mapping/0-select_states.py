@@ -2,10 +2,10 @@
 """
 Script to list elements from a database
 """
-if __name__ == "__main__":
-    import MySQLdb
-    import sys
+import MySQLdb
+from sys import argv
 
+if __name__ == "__main__":
     """ Connect to server"""
     db = MySQLdb.connect(
         host = 'localhost',
