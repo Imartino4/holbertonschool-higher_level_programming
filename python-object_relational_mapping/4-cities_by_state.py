@@ -18,7 +18,10 @@ if __name__ == "__main__":
         db=argv[3])
 
     cursor = db.cursor()
-    cursor.execute('SELECT c.id,c.name,s.name FROM states s INNER JOIN cities c ON s.id = c.state_id ORDER by s.id ASC')
+    cursor.execute('SELECT c.id,c.name,s.name\
+                    FROM states s INNER JOIN cities c\
+                    ON s.id = c.state_id\
+                    ORDER by s.id ASC')
     datos = cursor.fetchall()
     for d in datos:
         print(d)
