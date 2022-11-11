@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 This script list all State objects from 
 database hbtn_0e_6_usa
@@ -20,7 +21,9 @@ if __name__ == '__main__':
     """Relacionar conexion y modelos"""
     Session = sessionmaker(engine)
     session = Session()
-    
-    for instance in session.query(State).order_by(State.id):
-        print(f"{state.id}: {state.name}")
+   
+    """Consulto la base de datos"""
+    states = session.query(State).order_by(State.id)
+    for s in states:
+        print(f"{s.id}: {s.name}")
     
