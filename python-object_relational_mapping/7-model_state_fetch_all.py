@@ -13,7 +13,7 @@ from sqlalchemy.orm import sessionmaker
 if __name__ == '__main__':
 
     """Conecto db con la aplicacion"""
-    engine = create_engine(\
+    engine = create_engine(
         f'mysql+mysqldb://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}')
 
     """Creo las tablas"""
