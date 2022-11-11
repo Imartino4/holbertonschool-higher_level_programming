@@ -19,9 +19,16 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
     cursor.execute('SELECT c.name FROM cities c\
-                    JOIN states ON c.states_id=states.id\
+                    INNER JOIN states ON c.state_id=states.id\
                     WHERE states.name=%s\
-                    ORDER by s.id ASC', [argv[4]])
+                    ORDER by states.id ASC', [argv[4]])
     datos = cursor.fetchall()
-    for d in datos:
-        print(d)
+    length = len(datos)
+    if datos:
+        for d in datos:
+            if d == datos[length - 1]:
+                print(f"{d[0]}")
+            else:
+                print(f"{d[0]}", end=", ")
+    else:
+        print("")
