@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This script print the first State object from db hbtn0e_6_usa
+This script list State object containing letter 'a' from db hbtn0e_6_usa
 user | password | database must be given as argv
 Not allowed to fetch all states before display results
 """
@@ -18,9 +18,10 @@ if __name__ == '__main__':
     Session = sessionmaker(engine)
     session = Session()
 
-    state = session.query(State).filter(State.id == 1).first()
+    state = session.query(State).filter(State.name.contains("a")).order_by(State.id)
 
     if state:
-        print(f"{state.id}: {state.name}")
+        for s in state:
+            print(f"{s.id}: {s.name}")
     else:
         print("Nothing")
