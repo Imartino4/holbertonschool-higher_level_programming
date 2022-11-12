@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This script add State object Louisiana to the database hbtn0e_6_usa 
+This script add State object Louisiana to the database hbtn0e_6_usa
 user | password | database must be given as argv
 SQL injection free
 """
@@ -17,10 +17,10 @@ if __name__ == '__main__':
 
     Session = sessionmaker(engine)
     session = Session()
-    
+
     Louisiana = State(name='Louisiana')
-    
+
     session.add(Louisiana)
     session.commit()
-    
+
     print(f"{Louisiana.id}")
