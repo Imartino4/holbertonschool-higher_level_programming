@@ -21,10 +21,10 @@ if __name__ == '__main__':
 
     try:
         state = session.query(State).filter(
-                State.name = argv[4]).one()
+                State.name == argv[4]).one()
 
-        print(f"{s.id}")
+        print(f"{state.id}")
 
     except NoResultFound as err:
-		print("Not found")
+        print("Not found")
 
