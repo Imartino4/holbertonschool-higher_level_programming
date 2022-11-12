@@ -18,7 +18,8 @@ if __name__ == '__main__':
     Session = sessionmaker(engine)
     session = Session()
 
-    state = session.query(State).filter(State.name.contains("a")).order_by(State.id)
+    state = session.query(State).filter(\
+            State.name.contains("a")).order_by(State.id)
 
     if state:
         for s in state:
