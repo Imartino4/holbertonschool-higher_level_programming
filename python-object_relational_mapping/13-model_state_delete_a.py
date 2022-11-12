@@ -23,6 +23,6 @@ containing_a = session.query(State).filter(
 
 if containing_a:
     for obj in containing_a:
-        session.delete(obj)    
+        session.delete(obj)
 
 session.commit()
