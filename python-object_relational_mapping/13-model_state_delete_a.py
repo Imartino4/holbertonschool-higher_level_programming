@@ -18,6 +18,11 @@ if __name__ == '__main__':
     Session = sessionmaker(engine)
     session = Session()
 
-session.query(State).filter(
-        State.name.contains("a")).delete()
+containing_a = session.query(State).filter(
+        State.name.contains("a"))
+
+if containing_a:
+    for obj in containing_a:
+        session.delete(obj)    
+
 session.commit()
