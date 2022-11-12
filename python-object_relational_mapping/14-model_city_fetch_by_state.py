@@ -5,6 +5,7 @@ username, password and db name must be given as argv arguments
 """
 from sys import argv
 from model_state import Base, State
+from model_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -18,6 +19,8 @@ if __name__ == '__main__':
     Session = sessionmaker(engine)
     session = Session()
 
-    state_city = session.query(City, State).order_by(City.id)
-    for s in state_city:
-        print(s)
+    state_city = session.query(State, City).filter(
+            State.id == City.state_id).order_by(City.id)
+    """ state_city: Tupla (State_object, City_object)"""
+    for state, city in state_city:
+        print(f"{state.name}: ({city.id}) {city.name}")
