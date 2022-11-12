@@ -24,6 +24,5 @@ if __name__ == '__main__':
     states_ = session.query(State).order_by(State.id)
     for s in states_:
         print(f"{s.id}: {s.name}")
-        for c in s.child:
-            print(f"\t{c.id}: {c.name")
-        
+        for c in s.cities:  # Accedo por relationship
+            print(f"\t{c.id}: {c.name}")
