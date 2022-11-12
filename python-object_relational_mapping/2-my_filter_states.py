@@ -16,8 +16,8 @@ if __name__ == "__main__":
         db=argv[3])
 
     cursor = db.cursor()
-    cursor.execute('SELECT * FROM states ORDER by states.id ASC')
+    cursor.execute("SELECT * FROM states WHERE name='{}'".format(argv[4]))
     datos = cursor.fetchall()
     for d in datos:
-        if str(d[1][:]) == argv[4]:
+        if d[1] == argv[4]:
             print(d)
