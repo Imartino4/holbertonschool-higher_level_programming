@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This script print the id of State object passed as argument
-from db hbtn0e_6_usa 
+from db hbtn0e_6_usa
 user | password | database state name must be given as argv
 SQL injection free
 """
@@ -28,4 +28,3 @@ if __name__ == '__main__':
 
     except NoResultFound as err:
         print("Not found")
-
