@@ -7,6 +7,7 @@ Using SQLAlchemy
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
 
 
 Base = declarative_base()
@@ -18,4 +19,4 @@ class State(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(128), nullable=False)
     """ backref para que el hijo sepa quien es el padre"""
-    cities = relationship("City", backref='parent')
+    cities = relationship("City", backref='State')
