@@ -19,4 +19,4 @@ class State(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(128), nullable=False)
     """ backref para que el hijo sepa quien es el padre"""
-    cities = relationship("City", backref='State')
+    cities = relationship("City", backref='_State_')
