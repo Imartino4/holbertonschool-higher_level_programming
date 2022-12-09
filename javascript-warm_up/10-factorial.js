@@ -13,5 +13,9 @@ function factorial (a) {
 }
 
 const arg1 = parseInt(process.argv[2]);
-const fact = factorial(arg1);
-console.log(fact);
+if (arg1) {
+  const fact = factorial(arg1);
+  console.log(fact);
+} else {
+  console.log('1');
+}
