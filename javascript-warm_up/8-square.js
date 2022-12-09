@@ -17,7 +17,7 @@ if (parseInt(args)) {
 // if (parseInt(args)) {
 //   let row = 'X'
 //   for (let i = 0; i < args - 1; i++) {
-//     row = row + 'X' 
+//     row = row + 'X';
 //   }
 //   for (let i = 0; i < args; i++) {
 //     console.log(row);
