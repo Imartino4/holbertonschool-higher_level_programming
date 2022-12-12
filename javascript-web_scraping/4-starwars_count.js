@@ -3,7 +3,7 @@
 const process = require('process');
 const request = require('request');
 const url = process.argv[2];
-const charId = 'https://swapi-api.alx-tools.com/api/people/18/';
+const charId = 'https://swapi-api.hbtn.io/api/people/18/';
 
 request(url, (error, res, body) => {
   if (error) {
