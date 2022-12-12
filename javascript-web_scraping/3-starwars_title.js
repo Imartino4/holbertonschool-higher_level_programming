@@ -6,9 +6,9 @@ const url = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2];
 
 console.log(url);
 
-request(url, (error, res, body) => {
+request.get(url, (error, res, body) => {
   if (!error) {
-    console.log(body.title);
+    console.log(JSON.parse(body).title);
   } else {
     throw error;
   }
