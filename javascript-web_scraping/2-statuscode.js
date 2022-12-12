@@ -8,5 +8,7 @@ const url = process.argv[2];
 request(url, function (error, response) {
   if (!error) {
     console.log('code:', response && response.statusCode);
+  } else {
+    throw error;
   }
 });
