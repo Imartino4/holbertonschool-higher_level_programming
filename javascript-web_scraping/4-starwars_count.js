@@ -14,7 +14,6 @@ request(url, (error, res, body) => {
   for (let i = 0; i < results.length; i++) {
     for (let j = 0; j < results[i].characters.length; j++) {
       if (results[i].characters[j] === charId) {
-        console.log(results[i].characters[j]);
         count++;
       }
     }
